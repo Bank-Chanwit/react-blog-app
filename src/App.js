@@ -5,7 +5,7 @@ import Blogs from "./components/Blogs";
 function App() {
   return (
     <div className="App">
-      <Home/>
+      <Blogs/>
     </div>
   );
 }
