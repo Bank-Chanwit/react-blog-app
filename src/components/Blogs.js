@@ -1,7 +1,20 @@
-export default function Blogs(){
-    return(
-        <>
-        <h2>บทความทั้งหมด</h2>
-        </>
+import "./Blogs.css"
+import blogs from "../data/blogs";
+import { Link } from "react-router-dom";
+export default function Blogs() {
+    return (
+        <div className="blogs-container">
+            <article>
+                {blogs.map((item) => (
+                    <Link to={`/blog/${item.id}`} key={item.id}>
+                        <div className="card" key={item.id}>
+                            <h2>{item.title}</h2>
+                            <p>{item.content.substring(0, 300)}</p>
+                            <hr />
+                        </div>
+                    </Link>
+                ))}
+            </article>
+        </div>
     )
 }
